@@ -1,0 +1,366 @@
+/* built mobile-first */
+
+/* Universal styles */
+
+html {
+  font-family: Helvetica, "sans-serif", Arial;
+  font-size: 18px;
+}
+
+body {
+  background-color: hsl(0, 0%, 100%);
+  line-height: 1.5;
+}
+
+/* responsive - never horizontal scroll - (contains everything) */
+
+.top-level-container {
+  width: 100%;
+}
+
+/* add class="flow" to element
+sibling children will have top margin added
+this way don't have to select each element
+and style it a margin */
+
+.flow {
+  --flow-space: 1em;
+}
+
+.flow>*+* {
+  margin-top: var(--flow-space);
+}
+
+/* no display - (Large-viewport required) */
+
+.large-viewport {
+  display: none;
+}
+
+/* image & video scaling
+(images & videos wrapped in .img-container) */
+
+.img-container {
+  /* width: 50%; Example */
+  /* height: 200px; Example */
+  overflow: hidden;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* make links large clickable boxes */
+
+a {
+  display: block;
+  /* padding: 1rem .55rem; */
+  text-decoration: none;
+}
+
+nav a:hover, nav a:focus {
+  text-decoration: underline;
+}
+
+/* ----------
+end universal styles---------- */
+
+/*-------------------------------------------------*/
+
+/*---------------------------------------------*/
+
+body {
+  line-height: 1.4;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+/* NAV-BAR */
+
+.nav-bar {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 3.5rem;
+  z-index: 10;
+  background-color: cadetblue;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  color: white;
+}
+
+.nav-logo, .nav-bar-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar-links {
+  margin-right: 1rem;
+}
+
+.company-title {
+  margin-left: 1rem;
+}
+
+.logo-icon {
+  margin-left: 1rem;
+}
+
+.logo-icon img {
+  height: 1.5rem;
+  width: auto;
+}
+
+.nav-bar a {
+  color: white;
+}
+
+/* ----- */
+
+/* intro-banner > intro-text */
+
+.intro-banner {
+  width: 100%;
+  height: 17rem;
+  background-color: white;
+  background-image: url("../images/glasses-bg.png");
+  position: relative;
+  background-position: 20%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.intro-text {
+  width: 100%;
+  height: 3rem;
+  font-size: 1rem;
+  position: absolute;
+  top: 12.5rem;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+/* ----- */
+
+/* FEATURED */
+
+.featured {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 3.77rem auto;
+}
+
+.feat-box-figure {
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 700px) {
+  .featured {
+    justify-content: center;
+    align-items: baseline;
+  }
+  .feat-box-figure {
+    margin: 0 3rem;
+  }
+  .feat-box {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.feat {
+  text-align: center;
+  font-size: 0.77rem;
+  margin: 1.54rem auto;
+}
+
+.paper {
+  width: 3.5rem;
+}
+
+.ruler, .truck {
+  width: 5rem;
+}
+
+/* ----- */
+
+/* main */
+
+.main-content-box {
+  margin-bottom: 4rem;
+}
+
+.heading-banner {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: cadetblue;
+  width: 100%;
+  height: 2.5rem;
+}
+
+.info-text {
+  margin: 1rem 2rem 4rem 0.55rem;
+  font-size: 0.77rem;
+  width: 90%;
+}
+
+/* ----- */
+
+/* footer */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 9.5rem;
+  background-color: azure;
+  margin-top: 1rem;
+}
+
+footer small {
+  font-size: 0.55rem;
+  margin: 1rem;
+}
+
+.logo-icon-2 img {
+  width: auto;
+  height: 1.5rem;
+}
+
+@media only screen and (min-width: 400px) {
+  .logo-icon {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 440px) {
+  p, small {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .large-viewport {
+    display: unset;
+  }
+  .logo-icon {
+    margin-left: 2rem;
+  }
+  .nav-bar-links li {
+    margin: 1rem;
+  }
+  .intro-banner {
+    height: 22rem;
+  }
+  .intro-text {
+    font-size: 1.33rem;
+    padding: .75rem 4rem;
+    top: 8rem;
+    right: 2rem;
+    width: auto;
+  }
+  .featured {
+    margin: 3rem auto;
+    flex-direction: row;
+    height: 8rem;
+  }
+  .feat, .info-text, footer small {
+    font-size: 1rem;
+  }
+  main {
+    display: flex;
+    max-width: 53.33rem;
+    margin: 1rem auto;
+    justify-content: center;
+  }
+  .main-content-box {
+    margin-left: 5%;
+    width: 35%;
+    height: 15rem;
+  }
+  .heading-banner {
+    width: 10rem;
+    padding: .5rem 1.25rem;
+  }
+  .info-text {
+    margin: 1rem 0;
+  }
+  footer {
+    flex-direction: row;
+  }
+  .logo-icon-2 img {
+    margin: 4rem 1rem 4rem 4rem;
+  }
+}
+
+@media only screen and (min-width: 961px) {
+  .nav-bar {
+    max-width: 90%;
+    position: absolute;
+    margin: 0 5%;
+    top: 1rem;
+  }
+  .nav-bar-links {
+    margin-right: 2rem;
+  }
+  .intro-banner {
+    height: 30rem;
+  }
+  .intro-text {
+    padding: 1.5rem 5rem;
+    font-size: 2rem;
+    top: 14rem;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  html {
+    font-size: 20px;
+  }
+  .nav-bar {
+    max-width: 80%;
+    margin: 0 10%;
+  }
+  .intro-text {
+    right: 10%;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  html {
+    font-size: 21px;
+  }
+}
+
+@media only screen and (min-width: 3000px) {
+  html {
+    font-size: 22px;
+  }
+}
+
+@media only screen and (min-width: 4000px) {
+  html {
+    font-size: 23px;
+  }
+}
+
+@media only screen and (min-width: 5000px) {
+  html {
+    font-size: 24px;
+  }
+}
